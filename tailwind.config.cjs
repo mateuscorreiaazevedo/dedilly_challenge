@@ -5,6 +5,7 @@ module.exports = {
     './src/**/*.tsx'
   ],
   darkMode: 'class',
+  mode: 'jit',
   theme: {
     extend: {},
   },
