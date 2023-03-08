@@ -5,6 +5,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "editor.formatOnSave": false,
   "search.showLineNumbers": false,
   "workbench.editor.enablePreview": false,
   "workbench.list.openMode": "doubleClick",
