@@ -18,7 +18,7 @@ export class Service {
 
   constructor (private readonly baseURL: string = '') {
     this.api = axios.create({
-      baseURL
+      baseURL: this.baseURL
     })
   }
 
