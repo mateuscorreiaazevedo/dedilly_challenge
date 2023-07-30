@@ -1,27 +1,34 @@
+import { geocodeService, weatherService } from '@/services'
+import { useWeatherStory } from '@/hooks/use-weather-story'
 import { useForm } from 'react-hook-form'
 import { Search, X } from 'lucide-react'
-import React from 'react'
-import { geocodeService } from '@/services'
 import { toast } from 'react-hot-toast'
-import { useCitySearch } from '@/hooks/use-city-search'
+import React from 'react'
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const { register, handleSubmit, resetField, watch } = useForm<InputProps>({
     defaultValues: {
       search: ''
     }
   })
   const [loading, setLoading] = React.useState(false)
-  const { setCity } = useCitySearch()
+  const { setCity, setWeather } = useWeatherStory()
 
   const submitSearch = async ({ search }: InputProps) => {
     setLoading(true)
     try {
-      const response = await geocodeService.searchCity(search)
+      const geocodeResponse = await geocodeService.searchCity(search)
+      if (geocodeResponse) {
+        const weatherResponse = await weatherService.getWeatherByLatLng({
+          latitude: geocodeResponse?.lat as string,
+          longitude: geocodeResponse?.lon as string
+        })
+        setWeather(weatherResponse!)
+      }
       resetField('search')
       setCity({
-        ...response!,
-        display_name: response?.display_name.split(',')[0] as string,
+        ...geocodeResponse!,
+        display_name: geocodeResponse?.display_name.split(',')[0] as string,
       })
     } catch (error) {
       toast.error((error as any).message)

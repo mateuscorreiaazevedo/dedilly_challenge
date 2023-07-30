@@ -1,28 +1,10 @@
-import { useCitySearch } from '@/hooks/use-city-search'
-import { Toaster, toast } from 'react-hot-toast'
+import { useWeatherStory } from '@/hooks/use-weather-story'
 import { Header, Footer } from '@/components'
-import { weatherService } from '@/services'
+import { Toaster } from 'react-hot-toast'
 import React from 'react'
 
 export const App = () => {
-  const [weather, setWeather] = React.useState({} as Weather)
-  const { city } = useCitySearch()
-
-  React.useEffect(() => {
-    if (city) {
-      (async () => {
-        try {
-          const response = await weatherService.getWeatherByLatLng({
-            latitude: parseFloat(city!.lat),
-            longitude: parseFloat(city!.lon)
-          })
-          setWeather(response!)
-        } catch (error) {
-          toast.error((error as any).message)
-        }
-      })()
-    }
-  }, [city])
+  const { city, weather } = useWeatherStory()
 
   return (
     <main className='flex items-center justify-center h-screen w-full bg-neutral-100'>

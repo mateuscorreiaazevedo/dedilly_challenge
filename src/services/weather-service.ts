@@ -2,8 +2,8 @@ import { envConstants as e } from '@/config/env'
 import { Service } from './service'
 
 type Props = {
-  latitude: number
-  longitude: number
+  latitude: string
+  longitude: string
 }
 
 const service = new Service(e.baseUrlInfometeo)
@@ -14,8 +14,8 @@ class WeatherService {
       url: '/forecast',
       params: {
         current_weather: true,
-        latitude,
-        longitude
+        latitude: parseFloat(latitude),
+        longitude: parseFloat(longitude)
       }
     })
 
