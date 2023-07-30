@@ -8,7 +8,6 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "standard",
-    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -24,20 +23,6 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "parser": "typescript",
-        "semi": false,
-        "trailingComma": "none",
-        "singleQuote": true,
-        "printWidth": 100,
-        "tabWidth": 2,
-        "objectShortHand": true,
-        "semicolons": false,
-        "arrowParens": "avoid"
-      }
-    ],
     "space-before-function-paren": "warn",
     "comma-dangle": "off",
     "no-use-before-define": "off",
@@ -49,6 +34,8 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/comma-spacing": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
