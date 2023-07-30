@@ -60,4 +60,4 @@ Após executar o comando acima, a aplicação estará disponível em [localhost]
 
 >Sinta-se à vontade para explorar a aplicação e fazer as modificações necessárias para atender aos requisitos do seu projeto.
 
-Obrigado por analisar minha aplicação! Espero que seja útil goste!
+Obrigado por analisar minha aplicação! Espero que goste!
