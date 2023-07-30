@@ -7,14 +7,18 @@
 1.  Clone o repositório da aplicação do GitHub, utilizando o seguinte comando no terminal:
     
     
-    `git clone https://github.com/mateuscorreiaazevedo/dedilly_challenge.git` 
+    ```
+    git clone https://github.com/mateuscorreiaazevedo/dedilly_challenge.git
+    ``` 
     
-2.  Navegue até o diretório da aplicação:
+3.  Navegue até o diretório da aplicação:
     
     
-    `cd dedilly_challenge` 
+    ```
+    cd dedilly_challenge
+    ``` 
     
-3.  Agora, instale as dependências necessárias usando npm ou Yarn. Escolha um dos seguintes comandos:
+5.  Agora, instale as dependências necessárias usando npm ou Yarn. Escolha um dos seguintes comandos:
     
     Utilizando npm:
        
