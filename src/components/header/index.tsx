@@ -11,25 +11,28 @@ export const Header: React.FC = () => {
       search: ''
     }
   })
-  const [loading, setLoading] = React.useState(false)
-  const { setCity, setWeather } = useWeatherStory()
+  const { setCity, setWeather, setLoading } = useWeatherStory()
 
   const submitSearch = async ({ search }: InputProps) => {
     setLoading(true)
     try {
       const geocodeResponse = await geocodeService.searchCity(search)
-      if (geocodeResponse) {
+      if (geocodeResponse?.place_id) {
         const weatherResponse = await weatherService.getWeatherByLatLng({
           latitude: geocodeResponse?.lat as string,
           longitude: geocodeResponse?.lon as string
         })
         setWeather(weatherResponse!)
+        setCity({
+          ...geocodeResponse!,
+          title: geocodeResponse.display_name.split(',')[0]
+        })
+      } else {
+        toast.error('Cidade não encontrada.')
+        setCity(null)
+        setWeather(null)
       }
       resetField('search')
-      setCity({
-        ...geocodeResponse!,
-        display_name: geocodeResponse?.display_name.split(',')[0] as string,
-      })
     } catch (error) {
       toast.error((error as any).message)
     } finally {
@@ -52,9 +55,6 @@ export const Header: React.FC = () => {
           />
           <Search className='text-neutral-50 transition peer-focus/input:text-zinc-800' />
         </div>
-        <button type='submit' disabled={loading} className='disabled:cursor-not-allowed bg-neutral-300 px-4 h-8 rounded text-neutral-50 font-bold hover:bg-neutral-300/80 active:text-zinc-800 active:bg-neutral-400 transition'>
-          Pesquisar
-        </button>
       </form>
     </header>
   )
