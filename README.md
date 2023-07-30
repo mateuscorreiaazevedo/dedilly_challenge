@@ -2,7 +2,7 @@
 
 ## Seção 1: Instalação das Dependências
 
-Para executar a aplicação front-end, você precisará clonar o repositório e instalar suas dependências. Siga as etapas abaixo para realizar a instalação:
+>Para executar a aplicação front-end, você precisará clonar o repositório e instalar suas dependências. Siga as etapas abaixo para realizar a instalação:
 
 1.  Clone o repositório da aplicação do GitHub, utilizando o seguinte comando no terminal:
     
@@ -18,16 +18,20 @@ Para executar a aplicação front-end, você precisará clonar o repositório e 
     
     Utilizando npm:
        
-    `npm install` 
+    ```
+    npm install
+    ``` 
     
     Utilizando Yarn:
     
-    `yarn` 
+    ```
+    yarn
+    ``` 
     
 
 ## Seção 2: Configuração do Arquivo .env
 
-Para configurar corretamente o ambiente da aplicação, você precisa renomear o arquivo `.env.example` para `.env.local`. Siga as etapas abaixo para fazer isso:
+>Para configurar corretamente o ambiente da aplicação, você precisa renomear o arquivo `.env.example` para `.env.local`. Siga as etapas abaixo para fazer isso:
 
 1.  No diretório raiz da aplicação, procure o arquivo `.env.example`.
     
@@ -36,15 +40,19 @@ Para configurar corretamente o ambiente da aplicação, você precisa renomear o
 
 ## Seção 3: Iniciar a Aplicação
 
-Para iniciar a aplicação localmente, utilize os seguintes comandos:
+>Para iniciar a aplicação localmente, utilize os seguintes comandos:
 
 Utilizando npm:
 
-`npm run dev` 
+```
+npm run dev
+``` 
 
 Utilizando Yarn:
 
-`yarn dev` 
+```
+yarn dev
+``` 
 
 Após executar o comando acima, a aplicação estará disponível em [localhost](http://localhost:5173) no seu navegador.
 
