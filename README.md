@@ -56,6 +56,15 @@ yarn dev
 
 Após executar o comando acima, a aplicação estará disponível em [localhost](http://localhost:5173) no seu navegador.
 
+## Seção 4: Aplicação em Docker
+
+>Caso o usuário prefira, é possível rodar a aplicação em Docker com o comando abaixo
+
+```
+docker-compose up
+```
+- Pronto! Agora é só acessar a url [localhost](http://localhost:3000) e visualizar o projeto
+
 ## Considerações Finais
 
 >Sinta-se à vontade para explorar a aplicação e fazer as modificações necessárias para atender aos requisitos do seu projeto.

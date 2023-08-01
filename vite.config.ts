@@ -16,5 +16,13 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['test/setup.ts']
+  },
+  server: {
+    watch: {
+      usePolling: true
+    },
+    host: true,
+    strictPort: true,
+    port: 3000
   }
 })
